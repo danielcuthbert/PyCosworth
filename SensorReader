@@ -30,37 +30,37 @@ import timeit
 # Uncomment the sensor module that you want to test:
 
 # Cossie ECU
-#driver = CosworthSensors(ecuType = "L8 Pectel", pressureType = "mbar")
-#test_sensor = "RPM"
+driver = CosworthSensors(ecuType = "L8 Pectel", pressureType = "mbar")
+test_sensor = "RPM"
 
 # Gear indicator
 #driver = GearIndicatorSensors()
 #test_sensor = "GEAR"
 
 # Demo sensors
-driver = DemoSensors()
-test_sensor = "RPM"
+#driver = DemoSensors()
+#test_sensor = "RPM"
 
-if driver.__is_connected__():
+#if driver.__is_connected__():
 	# Get all of our available sensors
-	sensors = list(driver.available())
-	sensors.sort()
+#	sensors = list(driver.available())
+#	sensors.sort()
 	
-	for sensorId in sensors:
+#	for sensorId in sensors:
 		
 		# Get sensor data
-		data = driver.sensor(sensorId, force = True)
+#		data = driver.sensor(sensorId, force = True)
 		
 		# Get performance data for this read
-		perf = driver.performance(sensorId)
+#		perf = driver.performance(sensorId)
 		
 		# Binary representation
-		if data['rawValue'] <= 255:
-			b = bin(abs(data['rawValue']))[2:].zfill(8)
-		else:
-			b = bin(abs(data['rawValue']))[2:].zfill(16)
+#		if data['rawValue'] <= 255:
+#			b = bin(abs(data['rawValue']))[2:].zfill(8)
+#		else:
+#			b = bin(abs(data['rawValue']))[2:].zfill(16)
 			
 		# Sensor data and values
-		print("Sensor[%6s]   Binary[%16s]   Hex[%6s]   Value[%8.2f]   Speed[%6.3fms]     Description[%s]" % (sensorId, b, hex(abs(data['rawValue'])), data['value'], perf['last'], data['sensor']['description']))
+#		print(("Sensor[%6s]   Binary[%16s]   Hex[%6s]   Value[%8.2f]   Speed[%6.3fms]     Description[%s]" % (sensorId, b, hex(abs(data['rawValue'])), data['value'], perf['last'], data['sensor']['description'])))
 	
-	driver.close()
+#	driver.close()

@@ -39,7 +39,7 @@ from iomodules.GraphicsIO import GraphicsIO
 from iomodules.DataLoggerIO import DataLoggerIO
 
 # Start a new logger
-from libs.newlog import newlog
+from .libs.newlog import newlog
 if getattr(sys, 'frozen', False):
 	__file__ = os.path.dirname(sys.executable)
 logger = newlog(__file__)
@@ -94,7 +94,7 @@ if __name__ == '__main__':
 	ecuSensorDict = dataManager.dict()
 	ecuCounter = multiprocessing.Value('d', 0)
 	ecuSampleTime = multiprocessing.Value('d', 0.0)
-	ecuErrors = multiprocessing.Array('i', range(settings.MAX_ERRORS))
+	ecuErrors = multiprocessing.Array('i', list(range(settings.MAX_ERRORS)))
 	
 	# Create a new ecudata class using the shared data structures from above
 	ecuData = EcuData(ecuDataDict = ecuDataDict, 
