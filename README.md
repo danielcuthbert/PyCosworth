@@ -1,4 +1,4 @@
-# PyCosworth
+# PyCosworth/Lancia
 
 PyCosworth is a monitoring, data-logging and diagnostic tool for vehicles equipped with the [Magneti Marelli L8/P8 ECU](http://www.bigturbo.co.uk) which have the serial datastream protocol enabled.
 
